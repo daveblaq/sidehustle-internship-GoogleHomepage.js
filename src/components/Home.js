@@ -3,11 +3,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import logo from '../images/sh-logo-dark.png';
-import {
-	BrowserRouter as Router,
-	
-	Link
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
   import Navbar from './Navbar';
 
 const Container = styled.div`

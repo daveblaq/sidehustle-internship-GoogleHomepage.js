@@ -3,6 +3,12 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import logo from '../images/sh-logo-dark.png';
+import {
+	BrowserRouter as Router,
+	
+	Link
+  } from "react-router-dom";
+  import Navbar from './Navbar';
 
 const Container = styled.div`
   display: flex;
@@ -13,13 +19,26 @@ const LogoSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 290px;
+  min-height: 230px;
   height: calc(100% - 560px);
   img {
     width: 272px;
     height: 62px;
     margin-top: auto;
   }
+`;
+const TextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50px;
+  height: calc(100% - 560px);
+  color: #000;
+  font-weight: 600;
+  font-size:18px;
+  text-transform: capitalize;
+  margin-top:20px;
+  
 `;
 
 const SearchSection = styled.div`
@@ -116,7 +135,40 @@ const MicIcon = styled.div`
     vertical-align: middle;
   }
 `;
-
+const LanguageSection = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  padding-top: 18px;
+  top: 53px;
+  z-index: 0;
+  font-size:14px;
+  ul {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+	
+  }
+  ul li {
+	float: left;
+	
+	margin-left: 0.8em;
+  }
+  ul li a {
+	
+	text-decoration: none;
+	
+	color: #4312AE;
+	
+  }
+  ul li a:hover {
+	
+	text-decoration: underline;
+	
+	color: #4312AE;
+	
+  }
+`;
 const Home = () => {
 	const [textEntered, setTextEntered] = useState(logo);
 
@@ -126,14 +178,17 @@ const Home = () => {
 		
 	}
   return (
+
+
+
     <Container>
-      <LogoSection>
-		  {textEntered ? <p>{textEntered}</p> : <img
+      <Navbar />
+		  {textEntered ? (<TextSection><p>{textEntered}</p></TextSection>) : (<LogoSection> <img
           src={logo}
           alt='Sidehustle-logo'
-        /> }
+        /> </LogoSection>)}
         
-      </LogoSection>
+      
       <SearchSection>
         <Form action='/' method='GET' role='search'>
           <Search>
@@ -174,6 +229,17 @@ const Home = () => {
           <button>Google Search</button>
           <button>I'm Feeling Lucky</button>
         </ButtonSection>
+		<LanguageSection>
+			Google Offered in: <br />
+			<ul>
+			
+         <li><Link to="/">Hausa</Link></li>
+         <li><Link to="/">Igbo</Link></li>
+         <li><Link to="/">Èdè Yorùbá</Link></li>
+         <li><Link to="/">Nigerian Pidgin</Link></li>
+         
+		 </ul>
+		</LanguageSection>
       </SearchSection>
     </Container>
   );

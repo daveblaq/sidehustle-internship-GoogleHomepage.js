@@ -5,8 +5,13 @@ import { Link } from "react-router-dom";
 
 
 const Foot = styled.div`
-min-height: 22vh;
+
 background: #ebebeb;
+
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
 `;
 
 const TopLink = styled.div`
@@ -18,13 +23,14 @@ color: #70757a;
 `;
 
 const BottomLink = styled.div`
-padding: 15px 30px;
+padding: 15px;
+margin-bottom: 30px;
 
 font-size: 15px;
 color: #70757a;
 ul {
 	list-style-type: none;
-  margin-top: 15px;
+ 
   padding: 0;
 	
   }

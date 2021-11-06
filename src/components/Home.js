@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import logo from '../images/sh-logo-dark.png';
 import { Link } from "react-router-dom";
   import Navbar from './Navbar';
+  import Footer from './Footer';
 
 const Container = styled.div`
   display: flex;
@@ -242,6 +243,7 @@ const Home = () => {
 		 </ul>
 		</LanguageSection>
       </SearchSection>
+	  <Footer />
     </Container>
   );
 };

@@ -16,7 +16,7 @@ const LogoSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 230px;
+  min-height: 150px;
   height: calc(100% - 560px);
   img {
     width: 272px;
@@ -28,13 +28,17 @@ const TextSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 50px;
+  min-height: 150px;
   height: calc(100% - 560px);
   color: #000;
   font-weight: 600;
   font-size:18px;
   text-transform: capitalize;
   margin-top:20px;
+
+  p {
+	  padding: 10px;
+  }
   
 `;
 

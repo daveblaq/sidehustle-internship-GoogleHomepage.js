@@ -166,23 +166,28 @@ const LanguageSection = styled.div`
   }
 `;
 const Home = () => {
-	const [textEntered, setTextEntered] = useState(logo);
+	const [name, setName] = useState(true);
+	const [na, setNa] = useState(" ");
 
-	const textHandler = (e) => {
-		 setTextEntered(e.target.value);
+	const textHandler = (event) => {
+		 setName(false);
+		 setNa(event.target.value);
+		 if (event.target.value.trim().length === 0) {
+			 setName(true)
+		 }
 
 		
-	}
+	};
   return (
 
 
 
     <Container>
       <Navbar />
-		  {textEntered ? (<TextSection><p>{textEntered}</p></TextSection>) : (<LogoSection> <img
+		  {name ? (<LogoSection> <img
           src={logo}
           alt='Sidehustle-logo'
-        /> </LogoSection>)}
+        /> </LogoSection>) : (<TextSection><p>{na}</p></TextSection>) }
         
       
       <SearchSection>
